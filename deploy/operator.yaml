@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: network-policy-op
+  namespace: operator
+spec:
+  selector:
+    matchLabels:
+      app: network-policy-op
+  template:
+    metadata:
+      labels:
+        app: network-policy-op
+    spec:
+      serviceAccountName: operator
+      containers:
+        - image: repo/network-policy-operator:latest
+          name: network-policy-op
+          imagePullPolicy: Always
+          volumeMounts:
+            - name: config-volume
+              mountPath: /operator/config
+      volumes:
+        - name: config-volume
+          configMap:
+            name: network-policy-op

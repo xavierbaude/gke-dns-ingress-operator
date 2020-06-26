@@ -1,0 +1,4 @@
+dns-project:
+  name: gke-project
+dns-zone:
+  name: my-dns-zone

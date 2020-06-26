@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: network-policy-op
+  namespace: operator
+data:
+  whitelist.yaml: |-
+    whiteregex:
+        - ^kube
+
+    whitelist:
+        - default

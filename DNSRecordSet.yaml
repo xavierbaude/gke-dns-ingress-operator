@@ -1,0 +1,14 @@
+apiVersion: dns.cnrm.cloud.google.com/v1beta1
+kind: DNSRecordSet
+metadata:
+  name: my_name
+  namespace: my_namespace
+  annotations:
+    cnrm.cloud.google.com/project-id: my_project
+spec:
+  name: "my_host"
+  type: "A"
+  ttl: 60
+  managedZoneRef:
+    external: my_zone
+  rrdatas: []
